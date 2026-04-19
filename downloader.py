@@ -1,6 +1,7 @@
 import yt_dlp
 import os
 import uuid
+import logging
 from config import DOWNLOAD_PATH
 
 async def download_media(url: str, type: str = "video"):
@@ -24,7 +25,10 @@ async def download_media(url: str, type: str = "video"):
 
     # Agar cookies fayli bo'lsa, uni ishlatamiz
     if os.path.exists(cookie_file):
+        logging.info(f"Cookies fayli topildi va ishlatilmoqda: {cookie_file}")
         ydl_opts['cookiefile'] = cookie_file
+    else:
+        logging.warning("DIQQAT: cookies.txt fayli topilmadi! YouTube bloklashi mumkin.")
 
     if type == "audio":
         ydl_opts.update({
