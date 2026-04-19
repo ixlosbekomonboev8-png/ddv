@@ -4,7 +4,7 @@ import os
 TOKEN = os.getenv("BOT_TOKEN", "8423934246:AAEc7eAuy3Ya2_mYM-P38qWs41OeC18NTbU")
 
 # Admin ma'lumotlari
-ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "@ixlos_admin")
+ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "@Ixlosbek_admin_bot")
 
 # Yuklangan fayllarni vaqtinchalik saqlash joyi
 DOWNLOAD_PATH = "downloads"
