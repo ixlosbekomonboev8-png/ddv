@@ -1,0 +1,29 @@
+# Keraksiz fayllar
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.dbf
+.DS_Store
+
+# Virtual environment
+venv/
+env/
+
+# Yuklangan fayllar
+downloads/
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Boshqa sozlamalar
+setup.sh
+bot.service
+implementation_plan.md
+task.md
+walkthrough.md

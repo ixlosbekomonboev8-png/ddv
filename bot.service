@@ -1,0 +1,17 @@
+[Unit]
+Description=Telegram Save Bot Service
+After=network.target
+
+[Service]
+# Serverdagi foydalanuvchi nomi
+User=root
+# Bot joylashgan papka manzili
+WorkingDirectory=/root/save_bot
+# Virtual environment ichidagi python ishga tushiriladi
+ExecStart=/root/save_bot/venv/bin/python bot.py
+# Bot o'chib qolsa, avtomatik qayta yoqish
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
