@@ -53,4 +53,4 @@ async def process_download(callback: CallbackQuery):
             if os.path.exists(file_path):
                 os.remove(file_path)
     else:
-        await callback.message.edit_text("❌ Media yuklab bo'lmadi. Havola noto'g'ri bo'lishi mumkin.")
+        await callback.message.edit_text("❌ Media yuklab bo'lmadi. Havola noto'g'ri bo'lishi yoki YouTube bloklab qo'ygan bo'lishi mumkin. Admin: @Ixlosbek_admin_bot")

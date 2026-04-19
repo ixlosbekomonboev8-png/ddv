@@ -10,11 +10,21 @@ async def download_media(url: str, type: str = "video"):
     """
     random_name = str(uuid.uuid4())
     
+    # Cookies fayli bor yoki yo'qligini tekshiramiz
+    cookie_file = 'cookies.txt'
+    
     ydl_opts = {
         'outtmpl': f'{DOWNLOAD_PATH}/{random_name}.%(ext)s',
         'noplaylist': True,
         'quiet': True,
+        'no_warnings': True,
+        # User-Agent'ni insonga o'xshatib qo'yamiz
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
     }
+
+    # Agar cookies fayli bo'lsa, uni ishlatamiz
+    if os.path.exists(cookie_file):
+        ydl_opts['cookiefile'] = cookie_file
 
     if type == "audio":
         ydl_opts.update({
